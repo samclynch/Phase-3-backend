@@ -1,10 +1,11 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
-    post '/create_jobs' do 
-      jobs = Job.create(name:params[:name],desciption:params[:desciption],phone:params[:phone],location:params[:location])
-      jobs.to_json
-    end  
+
+    # get '/games' do
+    #   games = Game.all.order(:title).limit(10)
+    #   games.to_json
+    # end
 
     get '/jobs' do
       jobs = Job.all

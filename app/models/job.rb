@@ -1,3 +1,3 @@
-class Job
+class Job < ActiveRecord::Base
     belongs_to :client
 end
