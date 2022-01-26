@@ -2,12 +2,12 @@ class JobsController < ApplicationController
     get '/jobs' do
         jobs = Job.all.to_json
     end
-    post '/create_jobs' do 
-      jobs = Job.create(name:params[:name],desciption:params[:desciption],phone:params[:phone],location:params[:location])
+    post '/jobs' do 
+      jobs = Job.create(name:params[:name],desciption:params[:desciption],phone:params[:phone])
       jobs.to_json
     end  
     patch '/jobs/:id' do
-        jobs = Job.find(params[:id]).update(name:params[:name],desciption:params[:desciption],phone:params[:phone],location:params[:location]) #job id??\
+        jobs = Job.find(params[:id]).update(name:params[:name],desciption:params[:desciption],phone:params[:phone])
         jobs.to_json
     end
     delete '/jobs/:id' do

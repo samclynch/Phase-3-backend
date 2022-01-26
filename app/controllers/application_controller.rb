@@ -7,11 +7,6 @@ class ApplicationController < Sinatra::Base
     #   games.to_json
     # end
 
-    get '/jobs' do
-      jobs = Job.all
-      jobs.to_json
-  end 
-
     get '/jobs/:id' do
       jobs = Job.find(params[:id])
       jobs.to_json
